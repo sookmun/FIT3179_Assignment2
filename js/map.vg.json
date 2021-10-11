@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "World Hapinness Score",
+    "width": 800,
+    "height" :600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Week9_Homework/main/js/week9.topojson",
+      "format": {
+            "type": "topojson",
+            "feature": "week9"
+          }
+    },
+    "transform": [{
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Week9_Homework/main/Data/2020.csv"
+          },
+          "key": "Country name",
+          "fields": ["Ladder score"]
+        }
+      }
+    ],
+    "mark": {
+      "type": "geoshape"
+      },
+    "encoding": {
+      "color": {
+        "field": "Ladder score",
+        "type": "quantitative",
+        "scale": {"type": "log"}
+      },
+      "tooltip": [
+        {"field": "properties.name", "type": "nominal", "title": "Country name"},
+        {"field": "Ladder score", "type": "quantitative"}
+      ]
+    }
+  }
+  

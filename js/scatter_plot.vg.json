@@ -1,0 +1,170 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height" :600,
+    
+    "title": "Countries GDP",
+    "data": {
+      "url": "https://raw.githubusercontent.com/sookmun/Homework_Week10/main/Data/2020.csv"
+    },
+    "params": [
+      {
+        "name": "GDP",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 11.5,
+          "step": 0.2,
+          "name": "Minimum GDP per capita: "
+        }
+      },
+      {
+        "name": "Regional_Selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Western Europe",
+            "North America and ANZ",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ],
+          "labels":[
+            "Show All",
+            "Western Europe",
+            "North America and ANZ",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ],
+          "name": "Regional Selection: "
+        }
+      }
+    ],
+    "transform": [
+        {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
+        {"filter": "datum.Logged_GDP_per_capita> GDP"}
+        
+      ],
+    "encoding": {
+      "x": {
+        "field": "Ladder score",
+        "type": "quantitative",
+        "title": "Hapiness",
+        "axis": {"tickCount": 7}
+        
+      },
+      "y": {
+        "field": "Generosity",
+        "type": "quantitative",
+        "axis": {"tickCount": 7}
+        
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["Regional_Indicator"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Logged_GDP_per_capita",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [2, 3, 6, 8, 10, 12],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "Regional_Indicator",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Western Europe",
+                "North America and ANZ",
+                "Middle East and North Africa",
+                "Latin America and Caribbean",
+                "Central and Eastern Europe",
+                "East Asia",
+                "Southeast Asia",
+                "Commonwealth of Independent States",
+                "Sub-Saharan Africa",
+                "South Asia"
+              ],
+              "range": [
+                "#a6cee3",
+                "#1f78b4",
+                "#b2df8a",
+                "#33a02c",
+                "#fb9a99",
+                "#e31a1c",
+                "#fdbf6f",
+                "#ff7f00",
+                "#cab2d6",
+                "#6a3d9a"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "Country name", "type": "nominal"},
+            {"field": "Regional_Indicator", "type": "nominal"},
+            {"field": "Ladder score", "type": "quantitative", "format": ","},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
+            {"field": "Generosity", "type": "quantitative", "format": ","}            
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country name", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country name'] == 'China' || datum['Country name'] == 'Singapore' || datum['Country name'] == 'United States' || datum['Country name'] == 'New Zealand' || datum['Country name'] == 'Italy'",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country name", "type": "nominal"},
+            {"field": "Regional_Indicator", "type": "nominal"},
+            {"field": "Ladder score", "type": "quantitative", "format": ","},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
+            {"field": "Generosity", "type": "quantitative", "format": ","}            
+          ]
+        }
+      }
+    ],
+        "config": {}
+  }

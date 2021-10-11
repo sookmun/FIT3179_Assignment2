@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Hapiness Rank",
+    "width": 800,
+    "height" :600,
+    "data": {"url": "data/2015-2021.xlsx"},
+    "transform": [{"filter": "datum.year == 2021"}],
+    "mark": "text",
+    "encoding": {
+        "y": {
+        "field": "Country_Name",
+        "type": "ordinal",
+        "sort": "-x"
+        },
+        "x": {
+        "field": "Ladder_Score",
+        "title": "Score"
+        }
+    }
+    
+  }
