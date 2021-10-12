@@ -5,18 +5,17 @@
     
     "title": "Countries GDP",
     "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
     "params": [
       {
         "name": "Hapiness",
-        "value": 0,
         "bind": {
           "input": "range",
-          "min": 0,
-          "max": 11.5,
-          "step": 0.2,
-          "name": "Minimum GDP per capita: "
+          "min": 2015,
+          "max": 2021,
+          "step": 1,
+          "name": "Year: "
         }
       },
       {
@@ -55,7 +54,7 @@
     ],
     "transform": [
         {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
-        {"filter": "datum.Logged_GDP_per_capita> GDP"}
+        {"filter": "datum.Year> Hapiness"}
         
       ],
     "encoding": {
@@ -88,9 +87,9 @@
             "field": "Logged_GDP_per_capita",
             "type": "quantitative",
             "scale": {
-              "type": "threshold",
-              "domain": [6.5, 7,7.5,8,8.5, 9,9.5, 10,10.5, 11,11.5],
-              "range": [10, 50, 150, 200, 300, 450,600,750,900,1200]
+              "type": "log",
+              "domain": [7,8,9,10],
+              "range": [100, 200, 450,750]
               
             }
           },

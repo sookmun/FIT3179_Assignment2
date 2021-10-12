@@ -5,7 +5,7 @@
     
     "title": "Countries GDP",
     "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
     "params": [
       {
@@ -55,7 +55,8 @@
     ],
     "transform": [
         {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
-        {"filter": "datum.Logged_GDP_per_capita> GDP"}
+        {"filter": "datum.Logged_GDP_per_capita> GDP"},
+        {"filter": "datum.Year ==2020"}
         
       ],
     "encoding": {
@@ -131,9 +132,10 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal"},
             {"field": "Regional_Indicator", "type": "nominal"},
-            {"field": "Ladder score", "type": "quantitative", "format": ","},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ","},
             {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-            {"field": "Generosity", "type": "quantitative", "format": ","}            
+            {"field": "Freedom", "type": "quantitative", "format": ","},
+            {"field" : "Year","type": "ordinal"}      
           ]
         }
       },
@@ -159,9 +161,10 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal"},
             {"field": "Regional_Indicator", "type": "nominal"},
-            {"field": "Ladder score", "type": "quantitative", "format": ","},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ","},
             {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-            {"field": "Generosity", "type": "quantitative", "format": ","}            
+            {"field": "Freedom", "type": "quantitative", "format": ","},
+            {"field" : "Year","type": "ordinal"}           
           ]
         }
       }
