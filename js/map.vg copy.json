@@ -3,6 +3,7 @@
   "title": "World Hapinness Score",
   "width": 800,
   "height" :600,
+  "projection": {"type": "equirectangular"},
   "data": {
     "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
     "format": {

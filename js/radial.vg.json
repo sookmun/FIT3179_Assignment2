@@ -1,25 +1,15 @@
-  {
+{
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+    "description": "A simple radial chart with embedded data.",
     "width": 800,
     "height" :600,
-    "mark": "bar",
+    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"},
+    "layer": [{
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    }],
     "encoding": {
-      "x": {
-        
-        "field": "Regional_Indicator",
-        "type": "ordinal"
-      },
-      "y": {
-        "field" :"Freedom",
-        "aggregate": "median",
-        "type": "quantitative"
-      },
-      "y2": {
-        "field" :"Corruption",
-        "aggregate": "median",
-        "type": "quantitative"
-      },
+      "theta": {"field": "Healthy_Life_Expectancy", "type": "quantitative", "stack": true},
+      "radius": {"field": "Healthy_Life_Expectancy", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
       "color": {
         "field": "Regional_Indicator",
         "type": "nominal",
@@ -49,7 +39,6 @@
             "#6a3d9a"
           ]
         }
-      }
     }
+}
   }
-  
