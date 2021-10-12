@@ -1,21 +1,33 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Hapiness Rank",
-    "width": 800,
-    "height" :600,
-    "data": {"url": "data/2015-2021.xlsx"},
-    "transform": [{"filter": "datum.year == 2021"}],
-    "mark": "text",
+    "title": "Hapiness Rank 2021",
+    "height" :3000,
+    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"},
+    "mark": 
+    {
+        "type": "bar",
+        "align": "left",
+        "fontSize" : 30,
+        "fontWeight": "bold"
+      },
+    
     "encoding": {
         "y": {
         "field": "Country_Name",
         "type": "ordinal",
-        "sort": "-x"
-        },
-        "x": {
-        "field": "Ladder_Score",
-        "title": "Score"
+        "sort" : {
+            "field":"Ladder_Score",
+            "order" :"descending"
         }
+        },
+        "color" :{
+          "field" :"Ladder_Score",
+          "type": "quantitative",
+          "scale" :{"scheme" :"redyellowgreen"}
+          
+          
+        }
+        
     }
     
   }

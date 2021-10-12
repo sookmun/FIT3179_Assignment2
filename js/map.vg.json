@@ -4,7 +4,7 @@
     "width": 800,
     "height" :600,
     "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Week9_Homework/main/js/week9.topojson",
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map.topojson",
       "format": {
             "type": "topojson",
             "feature": "week9"
@@ -14,7 +14,8 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Week9_Homework/main/Data/2020.csv"
+            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/2015-2021.xlsx"
+            
           },
           "key": "Country name",
           "fields": ["Ladder score"]
