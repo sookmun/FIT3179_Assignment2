@@ -14,7 +14,7 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"
+            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/2021.csv"
             
           },
           "key": "Country_Name",

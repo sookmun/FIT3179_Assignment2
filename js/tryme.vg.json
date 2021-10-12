@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height" :600,
+    "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"},
+    "mark": "point",
+    "encoding": {
+      "x": {"field": "Ladder_Score", "type": "quantitative"},
+      "y": {"field": "Corruption", "type": "quantitative"}
+    },
+    "layer": [{
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Logged_GDP_per_capita",
+            "type": "quantitative",
+            "scale": {
+              "type": "log",
+              "domain": [6.5, 7,7.5,8,8.5, 9,9.5, 10,10.5, 11,11.5],
+              "range": [10, 50, 150, 200, 300, 450,600,750,900,1200]
+              
+            }
+          }
+        }
+    }]
+  }
+  

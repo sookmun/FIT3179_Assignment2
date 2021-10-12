@@ -9,7 +9,7 @@
     },
     "params": [
       {
-        "name": "GDP",
+        "name": "Hapiness",
         "value": 0,
         "bind": {
           "input": "range",
