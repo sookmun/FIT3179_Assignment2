@@ -4,7 +4,7 @@
     "width": 800,
     "height" :600,
     "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map.topojson",
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
       "format": {
             "type": "topojson",
             "feature": "week9"
@@ -14,11 +14,11 @@
         "lookup": "properties.name",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/2015-2021.xlsx"
+            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/2020.csv"
             
           },
-          "key": "Country name",
-          "fields": ["Ladder score"]
+          "key": "Country_Name",
+          "fields": ["Ladder_Score"]
         }
       }
     ],
@@ -27,7 +27,7 @@
       },
     "encoding": {
       "color": {
-        "field": "Ladder score",
+        "field": "Ladder_Score",
         "type": "quantitative",
         "scale": {"type": "log"}
       },
