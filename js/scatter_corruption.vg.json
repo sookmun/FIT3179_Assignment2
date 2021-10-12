@@ -158,9 +158,9 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal"},
             {"field": "Regional_Indicator", "type": "nominal"},
-            {"field": "Ladder score", "type": "quantitative", "format": ","},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ","},
             {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-            {"field": "Generosity", "type": "quantitative", "format": ","}            
+            {"field": "Freedom", "type": "quantitative", "format": ","}            
           ]
         }
       }

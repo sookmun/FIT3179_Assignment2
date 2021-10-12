@@ -1,26 +1,38 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "World Hapinness Score",
-    "width": 800,
-    "height" :600,
-    "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
-      
-    },
-    "transform": [
-      {"filter":"year(datum.year)==2019"},
-      {
-        "lookup": "Country_Name",
-        "from": {"data": {
-          "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
-          "format": {
-                "type": "topojson",
-                "feature": "world_map"
-              }
-        },
-        "key": "properties.name",
-        "fields": ["Ladder_Score"]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "World Hapinness Score",
+  "width": 800,
+  "height" :600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
+    "format": {
+          "type": "topojson",
+          "feature": "world_map"
+        }
+  },
+  "layer":[
+    {
+      "transform": [
+        {"calculate": "'Data is not available in ' + datum.properties.name", "as": "note"}
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
       }
+    },
+    {
+      "transform": [{
+        "lookup": "properties.name",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"
+            
+          },
+          "key": "Country_Name",
+          "fields": ["Ladder_Score"]
+        }
       }
     ],
     "mark": {
@@ -33,10 +45,11 @@
         "scale": {"scheme" :"redyellowgreen"}
       },
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "Country_Name"},
-        {"field": "Ladder_Score", "type": "quantitative"},
-        {"field" : "Year", "type": "ordinal"}
+        {"field": "properties.name", "type": "nominal", "title": "Country Name"},
+        {"field": "Ladder_Score", "type": "quantitative","title": "Hapiness Score"}
       ]
     }
-  }
+    }
+  ]
   
+}

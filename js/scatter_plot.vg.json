@@ -56,7 +56,7 @@
     "transform": [
         {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
         {"filter": "datum.Logged_GDP_per_capita> GDP"},
-        {"filter": "datum.Year ==2020"}
+        {"filter": "datum.Year ==2021"}
         
       ],
     "encoding": {
@@ -89,9 +89,9 @@
             "field": "Logged_GDP_per_capita",
             "type": "quantitative",
             "scale": {
-              "type": "threshold",
-              "domain": [6.5, 7,7.5,8,8.5, 9,9.5, 10,10.5, 11,11.5],
-              "range": [10, 50, 150, 200, 300, 450,600,750,900,1200]
+              "type": "log",
+              "domain": [7,8,9,10],
+              "range": [100, 200, 450,750]
               
             }
           },
