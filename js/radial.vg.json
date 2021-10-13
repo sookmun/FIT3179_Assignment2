@@ -3,10 +3,29 @@
     "description": "A simple radial chart with embedded data.",
     "width": 800,
     "height" :600,
-    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"},
-    "layer": [{
-      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
-    }],
+    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+    "transform": [
+      {"filter": "datum.Year ==Year_Selection"}
+      
+    ],
+    "params": [
+      {
+        "name": "Year_Selection",
+        "value": 2021,
+        "bind": {
+          "input": "select",
+          "options": [
+            "2021",
+            "2020"
+          ],
+          "labels":[
+            "2021",
+            "2020"
+          ],
+          "name": "Year: "
+        }
+      }
+    ],
     "encoding": {
       "theta": {"field": "Healthy_Life_Expectancy", "type": "quantitative", "stack": true},
       "radius": {"field": "Healthy_Life_Expectancy", "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}},
@@ -16,7 +35,8 @@
         "scale": {
           "domain": [
             "Western Europe",
-            "North America and ANZ",
+            "North America",
+            "Australia and New Zealand",
             "Middle East and North Africa",
             "Latin America and Caribbean",
             "Central and Eastern Europe",
@@ -36,9 +56,36 @@
             "#fdbf6f",
             "#ff7f00",
             "#cab2d6",
-            "#6a3d9a"
+            "#6a3d9a",
+            "#acada9"
           ]
         }
+    },
+        "tooltip": [
+          {"field": "Country_Name", "type": "nominal"},
+          {"field": "Regional_Indicator", "type": "nominal"},
+          {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f"},
+          {"field" : "Year","type": "ordinal"}      
+        ]
+},
+"layer": [
+  {
+  "mark": {"type": "arc", "innerRadius": 50, "stroke": "#f9f9fa"}
+  },
+  {
+  "mark": {"type": "text", "radiusOffset": 10,"angle": 0,"color":"black","fontSize":15,"fontWeight":"bold"},
+  "encoding": {
+    "text": {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f"},
+    "opacity": {
+      "condition": {
+        "test": "datum.Healthy_Life_Expectancy==76.953|| datum.Healthy_Life_Expectancy==76.80458069",
+        "value": 1
+      },
+      "value": 0
     }
-}
+   
+  }
+  }
+
+  ]
   }
