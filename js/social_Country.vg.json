@@ -1,0 +1,91 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple radial chart with embedded data.",
+  "width": 800,
+  "height" :600,
+  "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+  "params": [
+    {
+      "name": "Year",
+      "value" : 2018,
+      "bind": {
+        "input": "range",
+        "min": 2018,
+        "max": 2021,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Year== Year"}
+    
+  ],
+  "layer": [{
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Country_Name",
+        "type": "ordinal",
+        "sort" : { "field": "Regional_Indicator"}
+      },
+      "y": {
+        "aggregate": "median",
+        "field": "Social_Support",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "Regional_Indicator",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Western Europe",
+            "North America",
+            "Australia and New Zealand",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ],
+          "range": [
+            "#a6cee3",
+            "#1f78b4",
+            "#b2df8a",
+            "#33a02c",
+            "#fb9a99",
+            "#e31a1c",
+            "#fdbf6f",
+            "#ff7f00",
+            "#cab2d6",
+            "#6a3d9a",
+            "#acada9"
+          ]
+        }
+      },
+      "tooltip": [
+        {"field": "Regional_Indicator", "type": "nominal"},
+        {"field": "Ladder_Score", "type": "quantitative", "format": ","},
+        {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
+        {"field": "Freedom", "type": "quantitative", "format": ","},
+        {"field" : "Year","type": "ordinal"}      
+      ]
+    }
+  }, {
+    "mark": "rule",
+    "encoding": {
+      "y": {
+        "aggregate": "average",
+        "field": "Social_Support",
+        "type": "quantitative"
+      },
+      "color": {"value": "firebrick"},
+      "size": {"value": 3},
+      "tooltip" :[
+        {"field":"Social_Support","aggregate":"average","type": "quantitative","format":".2f"}
+      ]
+    }
+  }]
+}

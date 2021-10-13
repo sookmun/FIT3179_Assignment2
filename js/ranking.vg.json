@@ -7,8 +7,8 @@
     {
         "type": "bar",
         "align": "left",
-        "fontSize" : 30,
-        "fontWeight": "bold"
+        "cornerRadiusTopLeft": 3, 
+        "cornerRadiusTopRight": 3
       },
     
     "encoding": {

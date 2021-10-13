@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of four large companies as a small multiples of area charts.",
+  "width": 300,
+  "height": 100,
+  "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+  "transform": [
+    {"filter" : "datum.Country_Name=='Singapore'|| datum.Country_Name=='Malaysia'||datum.Country_Name=='South Korea'|| datum.Country_Name=='Japan'||datum.Country_Name=='United States'|| datum.Country_Name=='Canada'||datum.Country_Name=='El Salvador'|| datum.Country_Name=='Haiti'"}
+  ],
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": false,
+      "fill": "white"
+    }},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Time",
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Corruption",
+      "type": "quantitative",
+      "title": "Corruption",
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Country_Name",
+      "type": "nominal",
+      "legend": null
+    },
+    "row": {
+      "field": "Regional_Indicator",
+      "type": "nominal"
+    }
+  }
+}
