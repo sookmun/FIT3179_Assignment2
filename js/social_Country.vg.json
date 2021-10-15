@@ -1,6 +1,6 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple radial chart with embedded data.",
-  "width": 800,
+  "width": 1500,
   "height" :600,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
   "params": [
@@ -17,22 +17,37 @@
     }
   ],
   "transform": [
-    {"filter": "datum.Year== Year"}
+    {"filter": "datum.Year== Year"},
+    {
+      "joinaggregate": [{
+        "op": "average",
+        "field": "Social_Support",
+        "as": "Average_Social"
+      }]
+    }
     
   ],
   "layer": [{
-    "mark": "bar",
+    "mark": {"type":"bar","stroke": "black"},
     "encoding": {
       "x": {
         "field": "Country_Name",
         "type": "ordinal",
+        "title" :"Country Name",
         "sort" : { "field": "Regional_Indicator"}
       },
       "y": {
-        "aggregate": "median",
         "field": "Social_Support",
-        "type": "quantitative"
+        "type": "quantitative",
+        "title" : "Median Social Support Score"
       },
+      "fillOpacity": {
+        "condition": {"test": "datum.Social_Support <datum.Average_Social ", "value": 1},
+        "value": 0.2
+      },   
+      "strokeWidth" :{
+        "condition": {"test": "datum.Social_Support <datum.Average_Social ", "value":1},
+        "value": 0   },
       "color": {
         "field": "Regional_Indicator",
         "type": "nominal",
@@ -66,11 +81,11 @@
         }
       },
       "tooltip": [
-        {"field": "Regional_Indicator", "type": "nominal"},
-        {"field": "Ladder_Score", "type": "quantitative", "format": ","},
-        {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-        {"field": "Freedom", "type": "quantitative", "format": ","},
-        {"field" : "Year","type": "ordinal"}      
+        {"field": "Country_Name", "type": "nominal","title":"Country Name"},
+        {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+        {"field" : "Social_Support","type": "quantitative","title":"Social Support Score"} ,
+        {"field" : "Year","type": "ordinal"}
+          
       ]
     }
   }, {
@@ -84,7 +99,7 @@
       "color": {"value": "firebrick"},
       "size": {"value": 3},
       "tooltip" :[
-        {"field":"Social_Support","aggregate":"average","type": "quantitative","format":".2f"}
+        {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support"}
       ]
     }
   }]

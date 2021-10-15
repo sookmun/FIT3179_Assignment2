@@ -37,13 +37,20 @@
       }
     ],
     "mark": {
-      "type": "geoshape"
+      "type": "geoshape",
+      "stroke" :"grey"
       },
     "encoding": {
       "color": {
         "field": "Ladder_Score",
         "type": "quantitative",
-        "scale": {"scheme" :"redyellowgreen"}
+        "scale": {"scheme" :"redyellowgreen"},
+        "legend" :{
+          "orient": "bottom-left",
+          "title" : "Hapiness Score",
+          "labelBaseline" :"middle",
+          "direction": "vertical"
+        }
       },
       "tooltip": [
         {"field": "properties.name", "type": "nominal", "title": "Country Name"},

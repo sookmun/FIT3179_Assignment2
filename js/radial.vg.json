@@ -62,18 +62,19 @@
       }
   },
       "tooltip": [
-        {"field": "Country_Name", "type": "nominal"},
-        {"field": "Regional_Indicator", "type": "nominal"},
-        {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f"},
+        {"field": "Country_Name", "type": "nominal","title":"Country Name"},
+        {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+        {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f","title":"Healthy Life Expectancy"},
         {"field" : "Year","type": "ordinal"}      
       ]
 },
 "layer": [
+  
 {
-"mark": {"type": "arc", "innerRadius": 50, "stroke": "#f9f9fa"}
+"mark": {"type": "arc", "innerRadius": 60, "stroke": "#f0f0f1"}
 },
 {
-"mark": {"type": "text", "radiusOffset": 10,"angle": 0,"color":"black","fontSize":15,"fontWeight":"bold"},
+"mark": {"type": "text","radiusOffset": 15,"dy":10,"color":"black","fontSize":15,"fontWeight":"bold"},
 "encoding": {
   "text": {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f"},
   "opacity": {
@@ -83,9 +84,21 @@
     },
     "value": 0
   }
- 
 }
-}
+},
+{
+  "mark": {"type": "text","radiusOffset": 20,"dx":-20,"angle":-30,"fontSize":15,"fontWeight":"bold"},
+  "encoding": {
+    "text": {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ".2f"},
+    "opacity": {
+      "condition": {
+        "test": "datum.Healthy_Life_Expectancy==45.20000076 ||datum.Healthy_Life_Expectancy== 48.478",
+        "value": 1
+      },
+      "value": 0
+    }
+  }
+  }
 
 ]
 }

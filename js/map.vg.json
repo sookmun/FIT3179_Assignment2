@@ -1,16 +1,30 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "World Hapinness Score",
-    "width": 800,
-    "height" :600,
-    "data": {
-      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
-      "format": {
-            "type": "topojson",
-            "feature": "world_map"
-          }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "World Dystopia + residual Score",
+  "width": 800,
+  "height" :600,
+  "projection": {"type": "equirectangular"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",
+    "format": {
+          "type": "topojson",
+          "feature": "world_map"
+        }
+  },
+  "layer":[
+    {
+      "transform": [
+        {"calculate": "'Data is not available in ' + datum.properties.name", "as": "note"}
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
     },
-    "transform": [{
+    {
+      "transform": [{
         "lookup": "properties.name",
         "from": {
           "data": {
@@ -18,23 +32,26 @@
             
           },
           "key": "Country_Name",
-          "fields": ["Ladder_Score"]
+          "fields": ["Dystopia + residual"]
         }
       }
     ],
     "mark": {
-      "type": "geoshape"
+      "type": "geoshape",
+      "stroke" :"grey"
       },
     "encoding": {
       "color": {
-        "field": "Ladder_Score",
+        "field": "Dystopia + residual",
         "type": "quantitative",
-        "scale": {"scheme" :"redyellowgreen"}
+        "scale": {"scheme" :"darkred"}
       },
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "Country_Name"},
-        {"field": "Ladder_Score", "type": "quantitative"}
+        {"field": "properties.name", "type": "nominal", "title": "Country Name"},
+        {"field": "Dystopia + residual", "type": "quantitative","title": "Dystopia"}
       ]
     }
-  }
+    }
+  ]
   
+}

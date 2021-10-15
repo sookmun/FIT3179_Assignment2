@@ -1,11 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Stock prices of four large companies as a small multiples of area charts.",
   "width": 300,
   "height": 100,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
   "transform": [
-    {"filter" : "datum.Country_Name=='Singapore'|| datum.Country_Name=='Malaysia'||datum.Country_Name=='South Korea'|| datum.Country_Name=='Japan'||datum.Country_Name=='United States'|| datum.Country_Name=='Canada'||datum.Country_Name=='El Salvador'|| datum.Country_Name=='Haiti'"}
+    {"filter" : "datum.Country_Name=='Singapore'|| datum.Country_Name=='Malaysia'||datum.Country_Name=='South Korea'|| datum.Country_Name=='Japan'||datum.Country_Name=='United States'|| datum.Country_Name=='Canada'||datum.Country_Name=='El Salvador'|| datum.Country_Name=='Haiti' ||datum.Country_Name=='Chad'|| datum.Country_Name=='Mauritania'"}
   ],
   "mark": {
     "type": "line",
@@ -17,23 +16,32 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "title": "Time",
+      "title": "Year",
       "axis": {"grid": false}
     },
     "y": {
       "field": "Freedom",
       "type": "quantitative",
-      "title": "Corruption",
+      "title": "Freedom",
       "axis": {"grid": false}
     },
     "color": {
       "field": "Country_Name",
       "type": "nominal",
-      "legend": null
+      "legend": {
+        "title" : "Country Name",
+        "rowPadding" :10
+      }
     },
     "row": {
       "field": "Regional_Indicator",
-      "type": "nominal"
-    }
+      "type": "nominal",
+      "title" :null
+    },
+    "tooltip": [
+      {"field": "Country_Name", "type": "nominal","title":"Country Name"},
+      {"field": "Freedom", "type": "quantitative", "format": ".2f"},
+      {"field" : "Year","type": "ordinal"}      
+    ]
   }
 }

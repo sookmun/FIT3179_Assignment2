@@ -3,19 +3,20 @@
     "width": 800,
     "height" :600,
     
-    "title": "Countries GDP",
+    "title": "Corelation Of Curruption And Happiness In 2021",
     "data": {
       "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
     "params": [
       {
-        "name": "Hapiness",
+        "name": "GDP",
+        "value": 0,
         "bind": {
           "input": "range",
-          "min": 2015,
-          "max": 2021,
-          "step": 1,
-          "name": "Year: "
+          "min": 0,
+          "max": 11.5,
+          "step": 0.2,
+          "name": "Minimum GDP per capita: "
         }
       },
       {
@@ -25,7 +26,8 @@
           "options": [
             null,
             "Western Europe",
-            "North America and ANZ",
+            "North America",
+            "Australia and New Zealand",
             "Middle East and North Africa",
             "Latin America and Caribbean",
             "Central and Eastern Europe",
@@ -38,7 +40,8 @@
           "labels":[
             "Show All",
             "Western Europe",
-            "North America and ANZ",
+            "North America",
+            "Australia and New Zealand",
             "Middle East and North Africa",
             "Latin America and Caribbean",
             "Central and Eastern Europe",
@@ -54,19 +57,20 @@
     ],
     "transform": [
         {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
-        {"filter": "datum.Year> Hapiness"}
+        {"filter": "datum.Logged_GDP_per_capita> GDP"},
+        {"filter": "datum.Year ==2021"}
         
       ],
     "encoding": {
       "x": {
         "field": "Ladder_Score",
         "type": "quantitative",
-        "title": "Hapiness",
+        "title": "Hapiness Score",
         "axis": {"tickCount": 10}
         
       },
       "y": {
-        "field": "Freedom",
+        "field": "Corruption",
         "type": "quantitative",
         "axis": {"tickCount": 7}
         
@@ -99,7 +103,8 @@
             "scale": {
               "domain": [
                 "Western Europe",
-                "North America and ANZ",
+                "North America",
+                "Australia and New Zealand",
                 "Middle East and North Africa",
                 "Latin America and Caribbean",
                 "Central and Eastern Europe",
@@ -119,7 +124,8 @@
                 "#fdbf6f",
                 "#ff7f00",
                 "#cab2d6",
-                "#6a3d9a"
+                "#6a3d9a",
+                "#acada9"
               ]
             }
           },
@@ -128,11 +134,11 @@
             "value": 0.2
           },
           "tooltip": [
-            {"field": "Country_Name", "type": "nominal"},
-            {"field": "Regional_Indicator", "type": "nominal"},
-            {"field": "Ladder score", "type": "quantitative", "format": ","},
-            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-            {"field": "Generosity", "type": "quantitative", "format": ","}            
+            {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
+            {"field": "Corruption", "type": "quantitative", "format": ","}
           ]
         }
       },
@@ -150,17 +156,17 @@
           "color": {"value": "black"},
           "opacity": {
             "condition": {
-              "test": "datum['Country_Name'] == 'China' || datum['Country name'] == 'Singapore' || datum['Country name'] == 'United States' || datum['Country name'] == 'New Zealand' || datum['Country name'] == 'Italy'",
+              "test": "datum['Country_Name'] == 'Malaysia' || datum['Country_Name'] == 'Singapore' || datum['Country_Name'] == 'United States' || datum['Country_Name'] == 'Luxembourg' || datum['Country_Name'] == 'Togo'",
               "value": 1
             },
             "value": 0
           },
           "tooltip": [
-            {"field": "Country_Name", "type": "nominal"},
-            {"field": "Regional_Indicator", "type": "nominal"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ","},
-            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ","},
-            {"field": "Freedom", "type": "quantitative", "format": ","}            
+            {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
+            {"field": "Corruption", "type": "quantitative", "format": ","}
           ]
         }
       }
