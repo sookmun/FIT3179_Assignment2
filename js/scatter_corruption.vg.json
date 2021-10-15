@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
+    "width": 600,
     "height" :600,
     
     "title": "Corelation Of Curruption And Happiness In 2021",
