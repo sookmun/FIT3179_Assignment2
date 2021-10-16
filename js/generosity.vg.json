@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A ranged dot plot that uses 'layer' to convey changing life expectancy for the five most populous countries (between 1955 and 2000).",
+    "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+    "height" :500,
+    "width" :500,
+    "transform": [
+      {
+        "filter": {
+          "field": "Regional_Indicator",
+          "oneOf": [
+            "Western Europe",
+            "North America",
+            "Australia and New Zealand",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ]
+        }
+      },
+      {
+        "filter": {
+          "field": "Year",
+          "oneOf": [2015, 2021]
+        }
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Generosity",
+        "type": "quantitative",
+        "title": "Generosity",
+        "aggregate":"average"
+      },
+      "y": {
+        "field": "Regional_Indicator",
+        "type": "nominal",
+        "title": "Regional Indicator",
+        "axis": {
+          "offset": 5,
+          "ticks": false,
+          "minExtent": 70,
+          "domain": false
+        },
+        "sort":"x"
+      }
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "detail": {
+            "field": "Regional_Indicator",
+            "type": "nominal"
+          },
+          "color": {"value": "#db646f"},
+          "tooltip": [
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field" : "Year","type": "ordinal"}
+              
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "point",
+          "filled": true
+        },
+        "encoding": {
+          "color": {
+            "field": "Year",
+            "type": "ordinal",
+            "scale": {
+              "domain": [2015, 2021],
+              "range": ["#e6959c", "#911a24"]
+            },
+            "title": "Year"
+          },
+          "tooltip": [
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field" : "Year","type": "ordinal"}
+              
+          ],
+          "size": {"value": 100},
+          "opacity": {"value": 1}
+        }
+      }
+    ]
+  }
+  

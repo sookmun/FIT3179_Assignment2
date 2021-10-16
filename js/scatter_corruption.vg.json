@@ -70,7 +70,7 @@
         
       },
       "y": {
-        "field": "Corruption",
+        "field": "Dystopia + residual",
         "type": "quantitative",
         "axis": {"tickCount": 7}
         
