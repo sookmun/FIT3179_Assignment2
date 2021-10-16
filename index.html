@@ -17,29 +17,63 @@
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/teststyles.css" media="all">
-
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    /* Style the side navigation */
+  .sidenav {
+    height: 100%;
+    width: 275px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+  }
+  .vis-container{
+      width: 100%;
+    }
+  .vis-rank-container{
+    width: 100%;
+    height: max-content;
+  }
+  /* Style the content */
+  .content {
+    margin-left: 275px;
+    padding-left: 20px;
+  }
+      </style>
 </head>
 
 <body>
+<div class="sidenav">
+  <div id="vis9"></div>
+</div>
 
-  <h2>CSS Template using Grid</h2>
-  <p>In this example, we have created a header, three equal columns and a footer. On smaller screens, the columns will stack on top of each other.</p>
-  <p>Resize the browser window to see the responsive effect.</p>
-  <p><strong>Note:</strong> The Grid Layout Module is not supported in Internet Explorer or Edge 15 eand earlier versions.</p>
+
+
+
+<div class="content">
+<div> class = "h1" 
+  <h1>WORLD HAPINESS REPORT 2021</h1>
+</div>
   
-  <div class="grid-container">
-    <div class="header">
-      <h2>Header</h2>
-    </div>
-    
-    <div class="left" style="background-color:#aaa;">Column</div>
-    <div class="middle" style="background-color:#bbb;">Column</div>  
-    <div class="right" style="background-color:#ccc;">Column</div>
-    
-    <div class="footer">
-    <p>Footer</p>
-    </div>
-  </div>
+  <div  id="vis1"  class="vis-container"></div>
+  <div  id="vis2"  class="vis-container"></div>
+  <div  id="vis3"  class="vis-container"></div>
+  <div  id="vis4"  class="vis-container"></div>
+  <div  id="vis5"  class="vis-container"></div>
+  <div  id="vis6"  class="vis-container"></div>
+  <div  id="vis7"  class="vis-container"></div>
+  <div  id="vis8"  class="vis-container"></div>
+</div>
+
   
 
 <script type="text/javascript">

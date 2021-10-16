@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "World Dystopia + residual Score",
-  "width": 1500,
-  "height" :600,
+  "width":1300,
+  "height":600,
   "projection": {"type": "equirectangular"},
   "data": {
     "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/js/world_map_new.topojson",

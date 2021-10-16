@@ -2,6 +2,8 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Hapiness Rank 2021",
     "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/world-happiness-report-2021.csv"},
+    "width":50,
+    "height":3000,
     "mark": 
     {
         "type": "bar",
