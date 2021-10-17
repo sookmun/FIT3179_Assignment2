@@ -15,15 +15,14 @@ p {
    
 .page{
     width: 2200px;    
-    background-color: white;   
+    background-color: rgb(243, 232, 232);   
     margin: auto;
     padding: 50px;
     padding-top: 35px;
 }
 .vis-container{
     width: 100%;
-    background-color: beige;
-    padding-left: 10%;
+    padding-right: 30px;
 }
 .description h2, h1{
 margin-top:0px;
@@ -36,9 +35,12 @@ padding-right: 20px;
 }
 .pure-g{
 margin-bottom: 25px;
-background-color: beige;
 }
 .small-font{
     font-size: 14px;
+}
+.pure-u-1-6{
+    padding-left: 50px;
+
 }
 

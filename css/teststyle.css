@@ -6,7 +6,7 @@ h1{
    background-color: lightgray;
  }
  .page{
-   width: 850px;    
+   width: 2300px;    
    background-color: white;   
    margin: auto;
    padding: 50px;
@@ -14,6 +14,10 @@ h1{
 }
 .vis-container{
   width: 100%;
+}
+.vis-rank-container{
+  width: 100%;
+  height: max-content;
 }
 .description h2, h1{
   margin-top:0px;

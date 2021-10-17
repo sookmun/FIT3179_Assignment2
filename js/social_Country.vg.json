@@ -1,6 +1,6 @@
 {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple radial chart with embedded data.",
-  "width" :1800,
+  "width" :"container",
   "height":500,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
   "params": [
@@ -52,6 +52,7 @@
       "color": {
         "field": "Regional_Indicator",
         "type": "nominal",
+        "legend":{"direction": "horizontal","orient": "top"},
         "scale": {
           "domain": [
             "Western Europe",
@@ -98,7 +99,7 @@
         "type": "quantitative"
       },
       "color": {"value": "firebrick"},
-      "size": {"value": 3},
+      "size": {"value": 4},
       "tooltip" :[
         {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support"}
       ]
