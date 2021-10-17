@@ -68,18 +68,17 @@
             "South Asia"
           ],
           "range": [
-            "#a6cee3",
-            "#1f78b4",
-            "#b2df8a",
-            "#33a02c",
-            "#fb9a99",
-            "#e31a1c",
-            "#fdbf6f",
-            "#ff7f00",
-            "#cab2d6",
-            "#6a3d9a",
-            "#acada9"
-          ]
+            "#8dd3c7",
+            "#ffffb3",
+            "#bebada",
+            "#fb8072",
+            "#80b1d3",
+            "#fdb462",
+            "#b3de69",
+            "#fccde5",
+            "#d9d9d9",
+            "#bc80bd",
+            "#ccebc5"]
         }
       },
       "tooltip": [
@@ -101,7 +100,7 @@
       "color": {"value": "firebrick"},
       "size": {"value": 3},
       "tooltip" :[
-        {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support"}
+        {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support Score"}
       ],
       "strokeDash": {"value":[8,8]}
     }

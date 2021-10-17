@@ -3,7 +3,7 @@
     "width":"container",
     "height" :600,
     
-    "title": "Corelation Of Curruption And Happiness In 2021",
+    "title": "Correlation Of Healthy Life Expectancy And Happiness In 2021",
     "data": {
       "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
@@ -72,6 +72,7 @@
       "y": {
         "field": "Healthy_Life_Expectancy",
         "type": "quantitative",
+        "title" :"Healthy Life Expectancy",
         "axis": {"tickCount": 7}
         
       }
@@ -115,18 +116,17 @@
                 "South Asia"
               ],
               "range": [
-                "#a6cee3",
-                "#1f78b4",
-                "#b2df8a",
-                "#33a02c",
-                "#fb9a99",
-                "#e31a1c",
-                "#fdbf6f",
-                "#ff7f00",
-                "#cab2d6",
-                "#6a3d9a",
-                "#acada9"
-              ]
+              "#8dd3c7",
+              "#ffffb3",
+              "#bebada",
+              "#fb8072",
+              "#80b1d3",
+              "#fdb462",
+              "#b3de69",
+              "#fccde5",
+              "#d9d9d9",
+              "#bc80bd",
+              "#ccebc5"]
             }
           },
           "opacity": {

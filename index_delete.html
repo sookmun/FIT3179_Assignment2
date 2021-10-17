@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>World Hapiness Report 2021 </title>
+  <meta charset="utf-8">
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/teststyle.css" media="all">
+</head>
+
+<body>
+<div class="sidenav">
+  <div 
+id="vis9" class="sidenav">
+</div>
+<!-- <object id="vis9"></object> -->
+</div>
+
+
+<div class="content">
+  <h1>WORLD HAPINESS REPORT 2021</h1>
+  <h2>How Are The People Coping With The Global Pandemic? </h2>
+  <p>The year 2021 has been a year like no other. The world was grip by a global pandamic that still last till today. This pandamic highlights the disparity amoung
+    different countries. For instance country with more wealth and resoucres fared better than poorer countries. This begs the question how happy are people around the world today?
+    Every year The World Hapiness Report, conducts a worldwide poll to determine the hapiness score of a country. <a href="https://worldhappiness.report/">The World Hapiness Report</a> 
+    is written by a group of independent experts and is a publication publication of the Sustainable Development Solutions Network.
+   This year the report intent is to focuses on the effects of the global pandemic and how people all over the world have fared during this difficult times. Belows shows
+   illustration and analysis of the data collected.
+  </p>
+  <div class="pure-g">
+    
+   <div class="pure-u-1">
+     <h2>Hapiness Score Around The World</h2>
+     <div  id="vis1"  class="vis-container"></div>
+   </div>
+   </div>
+   <div class="pure-g">
+   <div class="pure-u-1">
+   <h2>What Makes A Country Happy?</h2>
+   <p>The world hapiness report uses six different variables to reflect what has been broadly found to be important in explaining national-level differences in life evaluations.
+     The six factors used are levels of GDP, life expectancy, generosity, social support, freedom, and corruption are likely to contribute to the Hapiness Score of a country.
+   The explanations below are excerpts from <a href="https://happiness-report.s3.amazonaws.com/2021/Appendix1WHR2021C2.pdf"> Statistical Appendix of World Happiness Report 2021</a></p>
+   </div>
+
+   <div class="pure-u-1-3">
+    <div class="factors-box">
+     <h2 class="factorsHead">Logged GPD per Capita</h2>
+     <p class="factors">The statistics of GDP per capita in purchasing power parity
+       (PPP) at constant 2017 international dollar prices are from the October 14,
+       2020 update of the World Development Indicators (WDI). </p>
+     <br>
+     <h2 class="factorsHead">Social Support</h2>
+     <p class="factors">Social support (or having someone to count on in times of trouble) is the national 
+       average of the binary responses to the GWP question “If you
+       were in trouble, do you have relatives or friends you can count on to help you 
+       whenever you need them, or not?”
+         </p>
+    </div>
+     
+   </div>
+   <div class="pure-u-1-3">
+     <div class="factors-box">
+       <h2 class="factorsHead">Healthy Life Expectancy</h2>
+     <p class="factors">Healthy life expectancies at birth are based 
+       on the data extracted from the World Health Organization’s (WHO) Global 
+       Health Observatory data repository. </p>
+     <br>
+     <br>
+     <br>
+     <h2 class="factorsHead">Freedom</h2>
+     <p class="factors">Freedom to make life choices is the national average of responses to the GWP 
+       question “Are you satisfied or dissatisfied with your freedom to choose what
+        you do with your life?”</p>
+
+     </div>
+     
+   </div>
+   <div class="pure-u-1-3">
+     <div class=factors-box>
+       <h2 class="factorsHead">Generosity</h2>
+       <p class="factors">Generosity is the residual of regressing national average of response to the GWP
+        question “Have you donated money to a charity in the past month?” on GDP per capita.</p>
+        <br>
+        <br>
+        <h2 class="factorsHead">Corruption</h2>
+        <p class="factors">Corruption Perception: The measure is the national average of the survey responses to two questions in the GWP: “Is corruption widespread throughout 
+          the government or not” and “Is corruption widespread within businesses or not?”</p>
+     </div>
+     
+     
+   </div>
+
+   </div>
+
+   <div class="pure-g">
+     <div class="pure-u-1-4">
+       <h1>Generosity in 2015 VS 2021</h1>
+       <div  id="vis2"  class="vis-container"></div>
+     </div>
+     <div class="pure-u-2-3">
+       <h1> Sense Of Freedom Throughout The Years</h1>
+       <div class="pure-u-1-3">
+         <p> add some explanation on what is the reason for the comparison</p>
+       </div>
+       
+       <div class="pure-u-1-3">
+         <div  id="vis4"  class="vis-container"></div>
+       </div>
+     </div>
+     
+     
+   </div>
+   <div class="pure-g">
+     <div class="pure-u-1">
+       <h2>Factors With Positive Correlation With Hapiness</h2>
+     <p>After some exploration within the data, the factors with very distinct positive correlation with the happiness score of the country is Life Expectancy and Corruption.
+       Below are two highly interactive scatter plots that visualizes the correlations. It also shows the comparison of the GDP per capita of each country.
+       Filter or highlight different regions to gain more insight by using the selection box and clicking on the legend.
+     </p>
+     </div>
+ 
+     </div>
+
+   <div class="pure-g">
+     <div class="pure-u-1-2">
+       <div  id="vis6"  class="vis-container"></div>
+     </div>
+     <div class="pure-u-1-2">
+       <div  id="vis8"  class="vis-container"></div>
+     </div>
+   
+   </div>
+
+   <div class="pure-g">
+     <div class="pure-u-1">
+       <h2>Do You Have Someone To Count On?</h2>
+       <p>The bar graph below display each countrys' social support score. The dash line indicates the world average social score. Countries with
+         below average social score is highlighted. Drag the Year slider to see the social support score of the world throughout the year 2018 -2021.
+         Note that some countries like Romania and Greece manage to score above the global average in later years. Furthermore, countries in the Sub-Saharan Africa
+         is more likely to be below the world average.
+       </p>
+       <div  id="vis7"  class="vis-container"></div>
+     </div>
+   </div>
+   </div>
+ <!-- end pure grid group -->
+    </div>
+</div>
+
+  
+
+<script type="text/javascript">
+  var specVis1 = "js/hapiness_map.vg.json";
+  var specVis2= "js/generosity.vg.json";
+  var specVis3= "js/corruption.vg.json";
+  var specVis4= "js/freedom.vg.json";
+  var specVis5= "js/dystopian.vg.json";
+  var specVis6= "js/scatter_plot.vg.json";
+  var specVis7= "js/social_Country.vg.json";
+  var specVis8= "js/scatter_corruption.vg.json";
+  var specVis9= "js/ranking.vg.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis7', specVis7, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis8', specVis8, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#vis9', specVis9, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
+
+

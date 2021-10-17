@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "World Hapinness Score",
   "width" :"container",
   "height" :600,
   "projection": {"type": "equirectangular"},

@@ -3,7 +3,7 @@
     "width":"container",
     "height" :600,
     
-    "title": "Corelation Of Curruption And Happiness In 2021",
+    "title": "Correlation Of Corruption And Happiness In 2021",
     "data": {
       "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
@@ -70,7 +70,7 @@
         
       },
       "y": {
-        "field": "Dystopia + residual",
+        "field": "Corruption",
         "type": "quantitative",
         "axis": {"tickCount": 7}
         
@@ -115,18 +115,17 @@
                 "South Asia"
               ],
               "range": [
-                "#a6cee3",
-                "#1f78b4",
-                "#b2df8a",
-                "#33a02c",
-                "#fb9a99",
-                "#e31a1c",
-                "#fdbf6f",
-                "#ff7f00",
-                "#cab2d6",
-                "#6a3d9a",
-                "#acada9"
-              ]
+                "#8dd3c7",
+                "#ffffb3",
+                "#bebada",
+                "#fb8072",
+                "#80b1d3",
+                "#fdb462",
+                "#b3de69",
+                "#fccde5",
+                "#d9d9d9",
+                "#bc80bd",
+                "#ccebc5"]
             }
           },
           "opacity": {
@@ -136,7 +135,7 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
             {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Happiness Score"},
             {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
             {"field": "Corruption", "type": "quantitative", "format": ","}
           ]
@@ -148,8 +147,9 @@
           "align": "right",
           "baseline": "middle",
           "dx": -12,
-          "fontSize": 11.5,
-          "fontStyle": "italic"
+          "fontSize": 12,
+          "fontStyle": "italic",
+          "fontWeight":"bolder"
         },
         "encoding": {
           "text": {"field": "Country_Name", "type": "nominal"},
@@ -164,8 +164,8 @@
           "tooltip": [
             {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
             {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
-            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
-            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Happiness Score"},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP Per Capita"},
             {"field": "Corruption", "type": "quantitative", "format": ","}
           ]
         }

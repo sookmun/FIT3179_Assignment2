@@ -1,33 +1,39 @@
 html,
 body{
-    background-color: rgb(204,204,204);
+    background-color: #83c5be;
   }
 h1 {
     text-align: center;
-    color: rgb(59, 75, 94);
-    font-size: 50px;
+    color: #293241;
+    font-size: 80px;
+    font-family: 'Rampart One', cursive;
+    
 }
 h2 {
     text-align: center;
-    color: rgb(73,85,99);
+    color: #028090;
     font-size: 35px;
+    font-family: 'Rampart One', cursive;
+    font-style: italic;
+    
 }
 
 p {
-    color: rgb(109,134,135);
+    color: #6d6875;
     font-size: 25px;
+    font-family: 'Quicksand', sans-serif;
 }
    
 .page{
     width: 2200px;    
-    background-color: rgb(251,234,234) ;   
+    background-color: #edf6f9 ;   
     margin: auto;
     padding: 50px;
     padding-top: 35px;
 }
 .vis-container{
     width: 100%;
-    padding-right: 30px;
+    
 }
 .description h2, h1{
 margin-top:0px;
@@ -45,21 +51,29 @@ margin-bottom: 25px;
     font-size: 14px;
 }
 .factors{
-	font-style:italic;
+	
+    font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
     text-align: justify;
+    color: #6d6875;
     
 }
 .factorsHead{
     text-align: center;
 
-    color: rgb(73,85,99);
+    color: #f45b69;
     font-size: 35px;
     
 }
 .factors-box{
     padding-left: 20px;
     padding-right: 20 px;
+}
+.factor-pics{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
 }
 
 
