@@ -3,11 +3,11 @@ h1{
   font-weight: 900;
 }
  body{
-   background-color: lightgray;
+   background-color: rgb(243, 232, 232)
  }
  .page{
    width: 2300px;    
-   background-color: white;   
+   background-color: rgb(233, 193, 193);   
    margin: auto;
    padding: 50px;
    padding-top: 35px;
@@ -33,4 +33,26 @@ h1{
 }
 .small-font{
     font-size: 14px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Style the side navigation */
+.sidenav {
+height: 3500px;;
+width: 215px;
+position: absolute;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: rgb(255, 255, 255);
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
+/* Style the content */
+.content {
+margin-left: 215px;
+padding-left: 25px;
+padding-right: 25px;
 }
