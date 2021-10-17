@@ -4,7 +4,7 @@
   "height": 100,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
   "transform": [
-    {"filter" : "datum.Country_Name=='Singapore'|| datum.Country_Name=='Malaysia'||datum.Country_Name=='South Korea'|| datum.Country_Name=='Japan'||datum.Country_Name=='United States'|| datum.Country_Name=='Canada'||datum.Country_Name=='El Salvador'|| datum.Country_Name=='Haiti' ||datum.Country_Name=='Chad'|| datum.Country_Name=='Mauritania'"}
+    {"filter" : "datum.Country_Name=='Slovenia'|| datum.Country_Name=='Uzbekistan'||datum.Country_Name=='Taiwan'|| datum.Country_Name=='Venezuela'||datum.Country_Name=='Yemen'|| datum.Country_Name=='United States'||datum.Country_Name=='Sri Lanka'|| datum.Country_Name=='Vietnam' ||datum.Country_Name=='Zimbabwe'|| datum.Country_Name=='Albania'|| datum.Country_Name=='Armenia'||datum.Country_Name=='China'|| datum.Country_Name=='Argentina'||datum.Country_Name=='Algeria'||datum.Country_Name=='Afghanistan'|| datum.Country_Name=='Cambodia' ||datum.Country_Name=='Benin'||datum.Country_Name=='Canada'|| datum.Country_Name=='United Kingdom'||datum.Country_Name=='Austria'"}
   ],
   "mark": {
     "type": "line",
@@ -12,36 +12,40 @@
       "filled": false,
       "fill": "white"
     }},
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {"grid": false}
-    },
-    "y": {
-      "field": "Freedom",
-      "type": "quantitative",
-      "title": "Freedom",
-      "axis": {"grid": false}
-    },
-    "color": {
-      "field": "Country_Name",
-      "type": "nominal",
-      "legend": {
-        "title" : "Country Name",
-        "rowPadding" :10
-      }
-    },
-    "row": {
-      "field": "Regional_Indicator",
-      "type": "nominal",
-      "title" :null
-    },
-    "tooltip": [
-      {"field": "Country_Name", "type": "nominal","title":"Country Name"},
-      {"field": "Freedom", "type": "quantitative", "format": ".2f"},
-      {"field" : "Year","type": "ordinal"}      
-    ]
-  }
+    "encoding": {
+      "facet": {
+        "field": "Regional_Indicator",
+        "type": "nominal",
+        "title":null,
+        "columns": 2
+
+      },
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year",
+        "axis": {"grid": false}
+      },
+      "y": {
+        
+        "field": "Freedom",
+        "type": "quantitative",
+        "title": "Freedom",
+        "axis": {"grid": false}
+      },
+      "color": {
+        "field": "Country_Name",
+        "type": "nominal",
+        "title" :"Country Name",
+        "legend": {
+          "title" : "Country Name",
+          "rowPadding" :10
+        }
+      },
+      "tooltip": [
+        {"field": "Country_Name", "type": "nominal","title":"Country Name"},
+        {"field": "Freedom", "type": "quantitative", "format": ".2f","title":"Freedom"},
+        {"field" : "Year","type": "ordinal"}      
+      ]
+    }
 }

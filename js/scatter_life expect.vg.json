@@ -1,0 +1,175 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":"container",
+    "height" :600,
+    
+    "title": "Corelation Of Curruption And Happiness In 2021",
+    "data": {
+      "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
+    },
+    "params": [
+      {
+        "name": "GDP",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 11.5,
+          "step": 0.2,
+          "name": "Minimum GDP per capita: "
+        }
+      },
+      {
+        "name": "Regional_Selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Western Europe",
+            "North America",
+            "Australia and New Zealand",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ],
+          "labels":[
+            "Show All",
+            "Western Europe",
+            "North America",
+            "Australia and New Zealand",
+            "Middle East and North Africa",
+            "Latin America and Caribbean",
+            "Central and Eastern Europe",
+            "East Asia",
+            "Southeast Asia",
+            "Commonwealth of Independent States",
+            "Sub-Saharan Africa",
+            "South Asia"
+          ],
+          "name": "Regional Selection: "
+        }
+      }
+    ],
+    "transform": [
+        {"filter": "Regional_Selection == null || datum.Regional_Indicator == Regional_Selection"},
+        {"filter": "datum.Logged_GDP_per_capita> GDP"},
+        {"filter": "datum.Year ==2021"}
+        
+      ],
+    "encoding": {
+      "x": {
+        "field": "Ladder_Score",
+        "type": "quantitative",
+        "title": "Hapiness Score",
+        "axis": {"tickCount": 10}
+        
+      },
+      "y": {
+        "field": "Healthy_Life_Expectancy",
+        "type": "quantitative",
+        "axis": {"tickCount": 7}
+        
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "continent_highlight": {
+            "type": "multi",
+            "fields": ["Regional_Indicator"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Logged_GDP_per_capita",
+            "type": "quantitative",
+            "scale": {
+              "type": "log",
+              "domain": [7,8,9,10],
+              "range": [100, 200, 450,750]
+              
+            }
+          },
+          "color": {
+            "field": "Regional_Indicator",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Western Europe",
+                "North America",
+                "Australia and New Zealand",
+                "Middle East and North Africa",
+                "Latin America and Caribbean",
+                "Central and Eastern Europe",
+                "East Asia",
+                "Southeast Asia",
+                "Commonwealth of Independent States",
+                "Sub-Saharan Africa",
+                "South Asia"
+              ],
+              "range": [
+                "#a6cee3",
+                "#1f78b4",
+                "#b2df8a",
+                "#33a02c",
+                "#fb9a99",
+                "#e31a1c",
+                "#fdbf6f",
+                "#ff7f00",
+                "#cab2d6",
+                "#6a3d9a",
+                "#acada9"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {"selection": "continent_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
+            {"field": "Corruption", "type": "quantitative", "format": ","}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country_Name", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Country_Name'] == 'Malaysia' || datum['Country_Name'] == 'Singapore' || datum['Country_Name'] == 'United States' || datum['Country_Name'] == 'Luxembourg' || datum['Country_Name'] == 'Togo'",
+              "value": 1
+            },
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country_Name", "type": "nominal" ,"title":"Country Name"},
+            {"field": "Regional_Indicator", "type": "nominal","title":"Regional Indicator"},
+            {"field": "Ladder_Score", "type": "quantitative", "format": ",","title":"Hapiness Score"},
+            {"field": "Logged_GDP_per_capita", "type": "quantitative", "format": ",","title":"GDP per Capita"},
+            {"field": "Healthy_Life_Expectancy", "type": "quantitative", "format": ","}
+          ]
+        }
+      }
+    ],
+        "config": {}
+  }

@@ -99,10 +99,11 @@
         "type": "quantitative"
       },
       "color": {"value": "firebrick"},
-      "size": {"value": 4},
+      "size": {"value": 3},
       "tooltip" :[
         {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support"}
-      ]
+      ],
+      "strokeDash": {"value":[8,8]}
     }
   }]
 }

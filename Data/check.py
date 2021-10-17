@@ -1,13 +1,20 @@
 import pandas as pd
 import csv
-# df= pd.read_csv("world-happiness-report-2021.csv")
-# df= pd.read_csv("world-happiness-report-2021.csv")
-# highest=df["Healthy_Life_Expectancy"].max()
-# lowest=df["Healthy_Life_Expectancy"].min()
-df= pd.read_csv("WHOdata.csv")
-# new_dataframe = df.filter(["Country","Year","Both sexes"], axis=1)
-new_dataframe = df[df.Year.eq(2015)]
-# newdf=df[df["Country","Year","Both sexes"]]
-# newdf=df["Country","Year","Both sexes"].head()
-print(new_dataframe)
-new_dataframe.to_csv('2015lifeexpect.csv')
+df= pd.read_csv("world-happiness-report-2021.csv")
+highest=df["Ladder_Score"].max()
+lowest=df["Ladder_Score"].min()
+print(highest)
+print(lowest)
+grouped_df = df.groupby("Regional_Indicator")
+maximums = grouped_df.max()
+minimums =grouped_df.min()
+maximums= maximums.filter(["Country_Name","Ladder_Score","Freedom"])
+print(maximums)
+print(">>>"*20)
+minimums= minimums.filter(["Country_Name","Ladder_Score","Freedom"])
+print(minimums)
+# highest=df.loc[df["Ladder_Score"].max()]
+# lowest=df.loc[df["Ladder_Score"].min()]
+# # new_dataframe = df.filter(["Country","Year","Both sexes"], axis=1)
+# print(highest)
+# print(lowest)

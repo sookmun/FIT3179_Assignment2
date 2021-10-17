@@ -13,37 +13,40 @@
       "filled": false,
       "fill": "white"
     }},
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "ordinal",
-      "title": "Year",
-      "axis": {"grid": false}
-    },
-    "y": {
-      "field": "Dystopia + residual",
-      "type": "quantitative",
-      "title": "Dystopia",
-      "axis": {"grid": false}
-    },
-    "color": {
-      "field": "Country_Name",
-      "type": "nominal",
-      "title" :"Country Name",
-      "legend": {
-        "title" : "Country Name",
-        "rowPadding" :10
-      }
-    },
-    "row": {
-      "field": "Regional_Indicator",
-      "type": "nominal",
-      "title" :null
-    },
-    "tooltip": [
-      {"field": "Country_Name", "type": "nominal","title":"Country Name"},
-      {"field": "Dystopia + residual", "type": "quantitative", "format": ".2f","title":"Dystopia"},
-      {"field" : "Year","type": "ordinal"}      
-    ]
-  }
+    "encoding": {
+      "facet": {
+        "field": "Regional_Indicator",
+        "type": "nominal",
+        
+        "columns": 3
+
+      },
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year",
+        "axis": {"grid": false}
+      },
+      "y": {
+        
+        "field": "Freedom",
+        "type": "quantitative",
+        "title": "Dystopia",
+        "axis": {"grid": false}
+      },
+      "color": {
+        "field": "Country_Name",
+        "type": "nominal",
+        "title" :"Country Name",
+        "legend": {
+          "title" : "Country Name",
+          "rowPadding" :10
+        }
+      },
+      "tooltip": [
+        {"field": "Country_Name", "type": "nominal","title":"Country Name"},
+        {"field": "Dystopia + residual", "type": "quantitative", "format": ".2f","title":"Dystopia"},
+        {"field" : "Year","type": "ordinal"}      
+      ]
+    }
 }
