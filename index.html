@@ -123,9 +123,8 @@
       <div class="pure-u-7-12">
         <h2> Sense Of Freedom Throughout The Years</h2>        
         <p> The graph below illustrates the freedom score throughout the year 2015 to 2021. For each region, two countries are chosen to show the comparison of the country's journey all through the years. 
-          The country is chosen based on the highest and lowest happiness score of the particular region.
-        </p>  
-        <br>   
+          The country is chosen based on the highest and lowest happiness score of the particular region. Note Australia and New Zealand is not included due to data being too similar. 
+        </p>    
           <div class="pure-u-10-24">
             <div  id="vis3"  class="vis-container"></div>
           </div>
@@ -137,7 +136,7 @@
         <h2>Factors With Positive Correlation With Happiness</h2>
       <p>After some exploration within the data, the factors with a very distinct positive correlation with the happiness score of the country is Life Expectancy and Corruption.
         Below are two highly interactive scatter plots that visualize the correlations. It also shows the comparison of the GDP per capita of each country.
-        Filter or highlight different regions to gain more insight by using the selection box and clicking on the legend.
+        <strong>Filter or highlight different regions</strong> to gain more insight by using the <strong>selection box and clicking on the legend.</strong> 
       </p>
       </div>
   
@@ -156,7 +155,8 @@
     <div class="pure-g">
       <div class="pure-u-1">
         <h2>Do You Have Someone To Count On?</h2>
-        <p>The bar graph below displays each countrys' social support score. The dashed line indicates the world average social score. Countries with below-average social scores are highlighted. Drag the Year slider to see the social support score of the world throughout the year 2018 - 2021.
+        <p>The bar graph below displays each countrys' social support score. The <strong style="color:red;">red dashed line indicates the world average social score.</strong>  Countries with below-average social scores are highlighted. 
+          <strong>Drag the Year slider</strong> the Year slider to see the social support score of the world throughout the year 2018 - 2021.
           Note that some countries like Romania and Greece manage to score above the global average in later years. Furthermore, countries in the Sub-Saharan Africa
           is more likely to be below the world average.
         </p>
@@ -186,8 +186,6 @@
   var specVis4= "js/scatter_life expect.vg.json";
   var specVis5= "js/scatter_corruption.vg.json";
   var specVis6= "js/social_Country.vg.json";
-  // var specVis5= "js/dystopian.vg.json";
-  // var specVis3= "js/corruption.vg.json";
 
   vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view

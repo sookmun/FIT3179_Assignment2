@@ -7,6 +7,12 @@
     "data": {
       "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
     },
+    "config": {
+      "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":18,"titleFontSize":16,"labelLimit": 0},
+      "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16,"titleFontSize":15,"labelLimit": 0},
+      "header": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":20,"titleFontSize":15},
+      "title": {"font": "sans-serif", "subtitleFont": "sans-serif","fontSize":20}
+    },
     "params": [
       {
         "name": "GDP",
@@ -170,6 +176,5 @@
           ]
         }
       }
-    ],
-        "config": {}
+    ]
   }

@@ -3,6 +3,12 @@
   "width" :"container",
   "height":500,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
+  "config": {
+    "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":15,"titleFontSize":20,"labelLimit": 0},
+    "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16,"titleFontSize":16,"labelLimit": 0},
+    "header": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":20,"titleFontSize":15},
+    "title": {"font": "sans-serif", "subtitleFont": "sans-serif","fontSize":20}
+  },
   "params": [
     {
       "name": "Year",
@@ -91,18 +97,21 @@
     }
   }, {
     "mark": "rule",
+    "name": "ruler",
     "encoding": {
       "y": {
         "aggregate": "average",
         "field": "Social_Support",
         "type": "quantitative"
+        
       },
       "color": {"value": "firebrick"},
-      "size": {"value": 3},
+      "size": {"value": 5},
       "tooltip" :[
         {"field":"Social_Support","aggregate":"median","type": "quantitative","format":".2f","title":"World Median Social Support Score"}
       ],
       "strokeDash": {"value":[8,8]}
     }
-  }]
+  }
+]
 }

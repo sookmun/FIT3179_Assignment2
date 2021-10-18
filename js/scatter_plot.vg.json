@@ -1,11 +1,16 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width":"container",
-    "height" :600,
-    
+    "height" :40,
     "title": "Corelation Of Freedom And Happiness In 2021",
     "data": {
       "url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"
+    },
+    "config": {
+      "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":13},
+      "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16},
+      "header": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16},
+      "title": {"font": "sans-serif", "subtitleFont": "sans-serif","fontSize":16}
     },
     "params": [
       {
@@ -171,6 +176,5 @@
           ]
         }
       }
-    ],
-        "config": {}
+    ]
   }

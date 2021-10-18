@@ -25,7 +25,7 @@ p {
 }
    
 .page{
-    width: 2200px;    
+    width: 2300px;    
     background-color: #edf6f9 ;   
     margin: auto;
     padding: 50px;
@@ -67,7 +67,7 @@ margin-bottom: 25px;
 }
 .factors-box{
     padding-left: 20px;
-    padding-right: 20 px;
+    padding-right: 20px;
 }
 .factor-pics{
 display: block;

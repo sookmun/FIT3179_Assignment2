@@ -1,8 +1,14 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
-    "height" :700,
+    "height" :770,
     "width" :"container",
+    "config": {
+      "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":15,"titleFontSize":20,"labelLimit": 0},
+      "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16,"titleFontSize":16,"labelLimit": 0},
+      "header": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":20,"titleFontSize":15},
+      "title": {"font": "sans-serif", "subtitleFont": "sans-serif","fontSize":20}
+    },
     "transform": [
       {
         "filter": {

@@ -6,6 +6,12 @@
   "transform": [
     {"filter" : "datum.Country_Name=='Slovenia'|| datum.Country_Name=='Uzbekistan'||datum.Country_Name=='Taiwan'|| datum.Country_Name=='Venezuela'||datum.Country_Name=='Yemen'|| datum.Country_Name=='United States'||datum.Country_Name=='Sri Lanka'|| datum.Country_Name=='Vietnam' ||datum.Country_Name=='Zimbabwe'|| datum.Country_Name=='Albania'|| datum.Country_Name=='Armenia'||datum.Country_Name=='China'|| datum.Country_Name=='Argentina'||datum.Country_Name=='Algeria'||datum.Country_Name=='Afghanistan'|| datum.Country_Name=='Cambodia' ||datum.Country_Name=='Benin'||datum.Country_Name=='Canada'|| datum.Country_Name=='United Kingdom'||datum.Country_Name=='Austria'"}
   ],
+  "config": {
+    "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":15,"titleFontSize":20,"labelLimit": 0},
+    "legend": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":16,"titleFontSize":16,"labelLimit": 0},
+    "header": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":20,"titleFontSize":15},
+    "title": {"font": "sans-serif", "subtitleFont": "sans-serif","fontSize":20}
+  },
   "mark": {
     "type": "line",
     "point": {
@@ -45,7 +51,7 @@
       },
       "tooltip": [
         {"field": "Country_Name", "type": "nominal","title":"Country Name"},
-        {"field": "Freedom", "type": "quantitative", "format": ".2f","title":"Freedom"},
+        {"field": "Freedom", "type": "quantitative", "format": ".3f","title":"Freedom"},
         {"field" : "Year","type": "ordinal"}      
       ]
     }
