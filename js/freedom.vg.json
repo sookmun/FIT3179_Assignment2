@@ -4,7 +4,7 @@
   "height":100,
   "data": {"url": "https://raw.githubusercontent.com/sookmun/FIT3179_Assignment2/main/Data/csvjson.json"},
   "transform": [
-    {"filter" : "datum.Country_Name=='Slovenia'|| datum.Country_Name=='Uzbekistan'||datum.Country_Name=='Taiwan'|| datum.Country_Name=='Venezuela'||datum.Country_Name=='Yemen'|| datum.Country_Name=='United States'||datum.Country_Name=='Sri Lanka'|| datum.Country_Name=='Vietnam' ||datum.Country_Name=='Zimbabwe'|| datum.Country_Name=='Albania'|| datum.Country_Name=='Armenia'||datum.Country_Name=='China'|| datum.Country_Name=='Argentina'||datum.Country_Name=='Algeria'||datum.Country_Name=='Afghanistan'|| datum.Country_Name=='Cambodia' ||datum.Country_Name=='Benin'||datum.Country_Name=='Canada'|| datum.Country_Name=='United Kingdom'||datum.Country_Name=='Austria'"}
+    {"filter" : "datum.Country_Name=='Turkmenistan'|| datum.Country_Name=='Uzbekistan'||datum.Country_Name=='Taiwan'|| datum.Country_Name=='Haiti'||datum.Country_Name=='Yemen'|| datum.Country_Name=='United States'||datum.Country_Name=='Sri Lanka'|| datum.Country_Name=='Singapore' ||datum.Country_Name=='Zimbabwe'|| datum.Country_Name=='Czech Republic'|| datum.Country_Name=='Armenia'||datum.Country_Name=='China'|| datum.Country_Name=='Costa Rica'||datum.Country_Name=='Israel'||datum.Country_Name=='Afghanistan'|| datum.Country_Name=='Myanmar' ||datum.Country_Name=='Mauritius'||datum.Country_Name=='Canada'|| datum.Country_Name=='Finland'||datum.Country_Name=='North Cyprus'"}
   ],
   "config": {
     "axis": {"labelFont": "sans-serif", "titleFont": "sans-serif","labelFontSize":15,"titleFontSize":20,"labelLimit": 0},
@@ -43,6 +43,7 @@
         "field": "Country_Name",
         "type": "nominal",
         "title" :"Country Name",
+        "scale": {"scheme" :"category20b"},
         "legend": {
           "title" : "Country Name",
           "rowPadding" :10
